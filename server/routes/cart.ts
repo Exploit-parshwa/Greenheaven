@@ -11,7 +11,7 @@ const getPlantById = async (id: string): Promise<Plant | undefined> => {
     // Use a simple HTTP request to get plant data from our own API
     const fetch = (await import('node-fetch')).default;
   // Use environment variable or default to Netlify function endpoint
-  const baseUrl = process.env.PLANT_API_URL || "https://greenhevaven.netlify.app/.netlify/functions/api";
+  const baseUrl = process.env.PLANT_API_URL || "https://greenheaven1.netlify.app/.netlify/functions/api";
   const response = await fetch(`${baseUrl}/plants/${id}`);
     if (response.ok) {
       const data = await response.json() as { plant: Plant };
